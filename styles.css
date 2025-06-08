@@ -1,0 +1,247 @@
+/* Custom styles to complement Tailwind CSS */
+
+/* Base styles */
+.transition-all {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Focus styles */
+.focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900;
+}
+
+/* Dark mode toggle */
+.dark-mode-toggle {
+    @apply fixed top-4 right-4 p-2 rounded-full bg-white/80 dark:bg-gray-800/80 shadow-lg hover:shadow-xl transition-all z-50 backdrop-blur-sm;
+}
+
+/* Line item animations */
+.line-item {
+    animation: slideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Payment wall animations */
+#payment-wall {
+    animation: fadeIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Logo upload styles */
+#logo-preview {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#logo-preview:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+#logo-preview img {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Button hover effects */
+button {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button:hover {
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Input focus effects */
+input, textarea, select {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+input:focus, textarea:focus, select:focus {
+    transform: translateY(-1px);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #CBD5E0;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #A0AEC0;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: #4A5568;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: #2D3748;
+}
+
+/* Glass morphism effects */
+.glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glass {
+    background: rgba(26, 32, 44, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Loading animation */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.loading {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    input, textarea, select {
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) {
+    button:hover {
+        transform: none;
+    }
+
+    input:focus, textarea:focus, select:focus {
+        transform: none;
+    }
+}
+
+/* Picker highlight */
+.picker-circle {
+    border-width: 4px;
+    border-color: transparent;
+    box-shadow: 0 0 0 0px #0ea5e9;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+input[type="radio"][name="accent"]:checked + .picker-circle {
+    border-color: #38bdf8;
+    box-shadow: 0 0 0 2px #38bdf8;
+}
+
+/* Fix for textarea and input overflow */
+input[type="text"], input[type="email"], input[type="number"], select {
+    border-radius: 9999px !important;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    min-height: 2.5rem;
+    overflow: visible;
+}
+textarea {
+    border-radius: 1.5rem !important;
+    padding: 1.25rem;
+    min-height: 5rem;
+    resize: vertical;
+    overflow: auto;
+    font-size: 1rem;
+    line-height: 1.5;
+    background: inherit;
+    color: inherit;
+}
+
+.line-item .delete-line-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 9999px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+.line-item .delete-line-item svg {
+    pointer-events: none;
+}
+
+/* Responsive side-by-side layout */
+@media (min-width: 768px) {
+    #invoice-form > .max-w-6xl {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        align-items: flex-start;
+    }
+    #invoice-form-element, #invoice-preview {
+        margin-top: 0 !important;
+    }
+}
+
+@media (max-width: 767px) {
+    #invoice-form > .max-w-6xl {
+        flex-direction: column;
+    }
+    #invoice-preview {
+        margin-top: 2rem;
+    }
+}
+
+/* Aesthetic preview table */
+#invoice-preview table th, #invoice-preview table td {
+    padding: 0.5rem 0.25rem;
+}
+#invoice-preview table th {
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+#invoice-preview table tr:not(:last-child) td {
+    border-bottom: 1px solid #f3f4f6;
+}
+
+/* Hide default radio */
+input[type="radio"][name="accent"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+} 

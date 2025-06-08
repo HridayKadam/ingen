@@ -1,0 +1,28 @@
+{
+  "name": "Ingen",
+  "version": "1.0.0",
+  "description": "A no-login, instant invoice generator for freelancers.",
+  "main": "src/js/main.js",
+  "scripts": {
+    "build": "tailwindcss build src/css/tailwind.css -o public/tailwind.css",
+    "start": "live-server public"
+  },
+  "keywords": [
+    "invoice",
+    "generator",
+    "freelancer",
+    "jsPDF",
+    "Tailwind CSS"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "jspdf": "^2.5.1",
+    "tailwindcss": "^2.2.19"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.1",
+    "postcss": "^8.4.6",
+    "autoprefixer": "^10.4.2"
+  }
+}

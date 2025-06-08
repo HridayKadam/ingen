@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freelancer Invoice Generator</title>
+    <link href="styles/tailwind.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 font-sans">
+    <div class="container mx-auto p-5">
+        <h1 class="text-2xl font-bold text-center mb-5">Freelancer Invoice Generator</h1>
+        <form id="invoice-form" class="bg-white p-6 rounded shadow-md">
+            <h2 class="text-xl font-semibold mb-4">Client Details</h2>
+            <div class="mb-4">
+                <label for="client-name" class="block text-gray-700">Client Name</label>
+                <input type="text" id="client-name" class="mt-1 block w-full p-2 border border-gray-300 rounded" required>
+            </div>
+            <div class="mb-4">
+                <label for="client-email" class="block text-gray-700">Client Email</label>
+                <input type="email" id="client-email" class="mt-1 block w-full p-2 border border-gray-300 rounded" required>
+            </div>
+            <h2 class="text-xl font-semibold mb-4">Invoice Information</h2>
+            <div class="mb-4">
+                <label for="invoice-number" class="block text-gray-700">Invoice Number</label>
+                <input type="text" id="invoice-number" class="mt-1 block w-full p-2 border border-gray-300 rounded" readonly>
+            </div>
+            <div class="mb-4">
+                <label for="item-description" class="block text-gray-700">Item Description</label>
+                <input type="text" id="item-description" class="mt-1 block w-full p-2 border border-gray-300 rounded" required>
+            </div>
+            <div class="mb-4">
+                <label for="item-amount" class="block text-gray-700">Amount</label>
+                <input type="number" id="item-amount" class="mt-1 block w-full p-2 border border-gray-300 rounded" required>
+            </div>
+            <div class="mb-4">
+                <label for="tax" class="block text-gray-700">Tax (%)</label>
+                <input type="number" id="tax" class="mt-1 block w-full p-2 border border-gray-300 rounded" value="0">
+            </div>
+            <button type="submit" class="bg-blue-500 text-white p-2 rounded">Generate Invoice</button>
+        </form>
+        <div id="invoice-preview" class="mt-6 p-4 bg-white rounded shadow-md hidden">
+            <h2 class="text-xl font-semibold mb-4">Invoice Preview</h2>
+            <div id="preview-content"></div>
+            <button id="download-btn" class="bg-green-500 text-white p-2 rounded mt-4">Download PDF</button>
+        </div>
+    </div>
+    <script src="scripts/app.js"></script>
+</body>
+</html>
