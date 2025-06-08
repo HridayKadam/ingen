@@ -4,15 +4,15 @@ A no-login, instant invoice generator for freelancers built with HTML, Tailwind 
 
 ## Features
 
-- 🚀 No login required
-- 💼 Multiple freelancer types (Writer, Designer, Developer, Consultant, Other)
-- 📝 Professional invoice generation
-- 💰 Multiple currency support (INR, USD, EUR)
-- 📱 Responsive design
-- 🌓 Dark mode support
-- 💾 Auto-save form data
-- 📄 PDF generation with watermark options
-- 💳 QR code payment integration
+-  No login required
+-  Multiple freelancer types (Writer, Designer, Developer, Consultant, Other)
+- Professional invoice generation
+-  Multiple currency support (INR, USD, EUR)
+- Responsive design
+- Dark mode support
+- Auto-save form data
+- PDF generation with watermark options
+-  QR code payment integration
 
 ## Quick Start
 
